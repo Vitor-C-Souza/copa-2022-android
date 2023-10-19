@@ -23,23 +23,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             Copa2022Theme {
                 val state by viewModel.state.collectAsState()
-                Log.e("TAG", "onCreate: ${state.matches}")
+                MainScreen(matches = state.matches)
             }
         }
     }
 
-}
-
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Composable
-@Preview(showBackground = true)
-fun DefaultPreview() {
-    Copa2022Theme {
-        Greeting("Android")
-    }
 }
